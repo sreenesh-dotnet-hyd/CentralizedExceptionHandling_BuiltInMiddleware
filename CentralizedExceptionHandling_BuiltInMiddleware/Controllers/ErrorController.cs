@@ -13,10 +13,14 @@ namespace CentralizedExceptionHandling_BuiltInMiddleware.Controllers
         public IActionResult HandleError()
         {
             var exceptionHandlerFeature = HttpContext.Features.Get<IExceptionHandlerFeature>();
+                var exception = exceptionHandlerFeature?.Error;
             return Problem(
                 statusCode: StatusCodes.Status500InternalServerError,
-                title: "An Unexpected error has occured!"
+                title: exception?.Message
+               
                 );
         }
     }
 }
+
+               

@@ -8,9 +8,9 @@ namespace CentralizedExceptionHandling_BuiltInMiddleware.Controllers
     public class TestController : ControllerBase
     {
         [HttpGet]
-        public IActionResult Test()
+        public IActionResult Test([FromRoute] int a, [FromRoute] int b)
         {
-            throw new Exception("testing an exception");
+            return Ok(a / b);
         }
     }
 }
