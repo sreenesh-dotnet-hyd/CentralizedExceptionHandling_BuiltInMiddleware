@@ -1,0 +1,6 @@
+@CentralizedExceptionHandling_BuiltInMiddleware_HostAddress = http://localhost:5002
+
+GET {{CentralizedExceptionHandling_BuiltInMiddleware_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
